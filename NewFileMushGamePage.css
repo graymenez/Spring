@@ -1,0 +1,311 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	height: 100vh;
+	background-color: rgba(225, 254, 202, 0.5);
+	display: flex;
+}
+
+/* .navBar {
+	width: 50px;
+	height: 100vh;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+} */
+
+.menu {
+	width: 100px;
+	cursor: url('http://www.rw-designer.com/cursor-extern.php?id=82469'), auto;
+	position: absolute;
+	left: 700px;
+	display: flex;
+	top: 400px;
+}
+
+h1 {
+	display: flex;
+	position: absolute;
+	left: 720px;
+	top: 500px;
+}
+
+.mushroomMemory {
+	position: relative;
+	right: 200px;
+	width: 640px;
+	height: 640px;
+	margin: auto;
+	flex-wrap: wrap;
+	display: flex;
+	perspective: 1000px;
+}
+
+.mushroom-card {
+	width: calc(25% - 10px);
+	position: relative;
+	margin: 5px;
+	height: calc(33.33% - 10px);
+	transform: scale(1);
+	transform-style: preserve-3d;
+	transition: transform 1s;
+	background-size: cover;
+}
+
+.text {
+	color: black;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	position: relative;
+	top: 140px;
+	right: 340px;
+	height: 20px;
+}
+
+.textSlide {
+	color: black;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	position: relative;
+	top: 200px;
+	right: 2000px;
+	height: 20px;
+}
+
+#game-over {
+	background-color: black;
+	height: 20px;
+}
+
+.text2 {
+	color: black;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	position: relative;
+	top: 160px;
+	right: 435px;
+	height: 20px;
+}
+
+.text2Slide {
+	color: black;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	position: relative;
+	top: 200px;
+	right: 2000px;
+	height: 20px;
+}
+
+.talkingMush {
+	width: 220px;
+	height: 220px;
+	position: relative;
+	top: 90px;
+	right: 200px;
+}
+
+.talkingMushSlide {
+	color: black;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	position: relative;
+	top: 200px;
+	right: 4000px;
+}
+
+/* #restart-button {
+	position: relative;
+	right: 1200px;
+	top: 80%;
+} */
+
+.funnyMushArrives {
+	width: 360px;
+	height: 360px;
+	position: relative;
+	top: 200px;
+}
+.funnyMush {
+	right: 400px;
+	width: 360px;
+	height: 360px;
+	position: relative;
+	top: 200px;
+}
+
+#current-score {
+	position: relative;
+	z-index: 50;
+	background: none;
+	padding: 0;
+	background-size: 20px;
+	margin: 0px;
+	font-family: 'Concert One', cursive;
+}
+
+.mushroom-card:hover {
+	transform: scale(1.03);
+}
+
+.mushroom-card:active {
+	transform: scale(.97);
+	transition: transform .2s;
+}
+
+.mushroom-card.flip {
+	transform: rotateY(180deg);
+}
+
+/*  */
+
+.front,
+.back {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	border-radius: 10px;
+	backface-visibility: hidden;
+	box-shadow: 5px 8px rgba(77, 77, 77, 0.705);
+	cursor: url('http://www.rw-designer.com/cursor-extern.php?id=82469'), auto;
+}
+
+.back:hover {
+	transform: scale(1.03);
+	box-shadow: 1px 4px rgba(54, 54, 54, 0.705);
+	transition: box-shadow 1s;
+}
+
+.front {
+	transform: rotateY(180deg);
+}
+/* h1 {
+	color: black;
+	font-size: 20px;
+} */
+
+.animated {
+	animation: fadeInAnimation ease 2s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+/* #game {
+	display: none;
+} */
+
+/* #game .row {
+	width: 100%;
+} */
+
+/* .game-card-wrapper {
+	perspective: 600px;
+	width: 8%;
+	height: 15%;
+	padding-bottom: 10%;
+	position: relative;
+	margin: 1rem auto;
+}
+
+.game-card-wrapper:hover {
+	cursor: url('http://www.rw-designer.com/cursor-extern.php?id=82469'), auto;
+}
+
+.game-card {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	transform-style: preserve-3d;
+	transition: transform 1s;
+	background-position: center;
+}
+
+.game-card.flipped {
+	transform: rotateY(180deg);
+}
+
+.front,
+.back {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	backface-visibility: hidden;
+	width: 100%;
+	height: 100%;
+	border-radius: 8px;
+	border-radius: 2px solid black;
+	overflow: hidden;
+}
+
+.front {
+	border-radius: 8px;
+}
+
+.front > img {
+	height: 100%;
+	width: 100%;
+	background-position: center;
+	border-radius: 8px;
+}
+
+.back {
+	transform: rotateY(180deg);
+}
+.back > img {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	background-position: center;
+	object-fit: cover;
+}
+
+#current-score {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 40px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	font-family: 'Concert One', cursive;
+}
+
+#end {
+	display: none;
+}
+
+#end.game-over {
+	display: flex;
+	position: ablsolute;
+	background-color: black;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	flex-direction: column;
+	align-items: center;
+	color: white;
+	justify-content: space-around;
+	font-family: 'Otomanopee One', sans-serif;
+	text-align: center;
+}
+
+#end h1 {
+	font-size: 8rem;
+}
+
+#end h4 {
+	font-size: 3rem;
+} */
